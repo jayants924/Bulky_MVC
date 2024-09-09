@@ -1,6 +1,27 @@
-﻿@{
+﻿@model List<Category>
+@{
     ViewData["Title"] = "Category List";
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's Category Listing.</p>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>
+                Category Name
+            </th>
+            <th>
+                Category Order
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td>@obj.Name</td>
+                <td>@obj.DisplayOrder</td>
+            </tr>
+        }
+    </tbody>
+</table>
